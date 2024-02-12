@@ -1,6 +1,5 @@
 import React, { useState, useCallback, useContext } from 'react';
 import { ScrollView } from 'react-native';
-import { TabRouter, useNavigation } from '@react-navigation/native';
 
 import PreferencesContext from '~/Contexts/PreferencesContext';
 
@@ -16,8 +15,6 @@ import {
 
 import {
 	Container,
-	PageHeader,
-	PageTitle,
 	SettingsContent,
 	Category,
 	CategoryTitle,
@@ -28,15 +25,9 @@ import {
 const Settings: React.FC = () => {
 	const [isBuyLoading, setIsBuyLoading] = useState<boolean>(false);
 	const [isRestoreLoading, setIsRestoreLoading] = useState<boolean>(false);
-	const [error, setError] = useState<string>('');
 
 	const { userPreferences, setUserPreferences } =
 		useContext(PreferencesContext);
-	const { goBack } = useNavigation();
-
-	const onDimissError = useCallback(() => {
-		setError('');
-	}, []);
 
 	const handleBuyRemoveAds = useCallback(async () => {
 		setIsBuyLoading(true);
@@ -73,7 +64,7 @@ const Settings: React.FC = () => {
 
 	return (
 		<Container>
-			<Header title="Configurações" />
+			<Header title="Configurações" noDrawer />
 			<ScrollView>
 				<SettingsContent>
 					<Category>
