@@ -11,41 +11,41 @@ import Button from '~/Components/Button';
 import { Container, Content, PageTitle, Message } from './styles';
 
 const AppleATT: React.FC = () => {
-    const { reset } = useNavigation();
+	const { reset } = useNavigation();
 
-    const handleContinue = useCallback(async () => {
-        let response = null;
+	const handleContinue = useCallback(async () => {
+		let response = null;
 
-        response = await request(
-            RNPermissions.PERMISSIONS.IOS.APP_TRACKING_TRANSPARENCY
-        );
+		response = await request(
+			RNPermissions.PERMISSIONS.IOS.APP_TRACKING_TRANSPARENCY
+		);
 
-        if (response === 'granted') {
-            await setAllowedToReadIDFA(true);
-        } else {
-            await setAllowedToReadIDFA(false);
-        }
+		if (response === 'granted') {
+			await setAllowedToReadIDFA(true);
+		} else {
+			await setAllowedToReadIDFA(false);
+		}
 
-        reset({
-            routes: [{ name: 'Home' }],
-        });
-    }, [reset]);
+		reset({
+			routes: [{ name: 'Home' }],
+		});
+	}, [reset]);
 
-    return (
-        <Container>
-            <Content>
-                <PageTitle>
-                    {strings.View_Permissions_AppleAT_PageTitle}
-                </PageTitle>
-                <Message>{strings.View_Permissions_AppleAT_Message}</Message>
+	return (
+		<Container>
+			<Content>
+				<PageTitle>
+					{strings.View_Permissions_AppleAT_PageTitle}
+				</PageTitle>
+				<Message>{strings.View_Permissions_AppleAT_Message}</Message>
 
-                <Button
-                    text={strings.View_Permissions_AppleAT_Button_Continue}
-                    onPress={handleContinue}
-                />
-            </Content>
-        </Container>
-    );
+				<Button
+					text={strings.View_Permissions_AppleAT_Button_Continue}
+					onPress={handleContinue}
+				/>
+			</Content>
+		</Container>
+	);
 };
 
 export default AppleATT;

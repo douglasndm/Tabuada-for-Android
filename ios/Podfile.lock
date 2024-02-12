@@ -1202,8 +1202,8 @@ PODS:
   - RevenueCat (4.35.0)
   - RNCAsyncStorage (1.21.0):
     - React-Core
-  - RNCMaskedView (0.1.11):
-    - React
+  - RNCMaskedView (0.3.1):
+    - React-Core
   - RNDeviceInfo (8.7.1):
     - React-Core
   - RNFBAnalytics (18.8.0):
@@ -1233,7 +1233,7 @@ PODS:
     - GoogleUserMessagingPlatform (= 2.1.0)
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
-  - RNPermissions (3.10.1):
+  - RNPermissions (4.1.1):
     - React-Core
   - RNPurchases (7.19.0):
     - PurchasesHybridCommon (= 9.6.0)
@@ -1314,7 +1314,7 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - ReactNativeLocalization (from `../node_modules/react-native-localization`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
-  - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
+  - "RNCMaskedView (from `../node_modules/@react-native-masked-view/masked-view`)"
   - RNDeviceInfo (from `../node_modules/react-native-device-info`)
   - "RNFBAnalytics (from `../node_modules/@react-native-firebase/analytics`)"
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
@@ -1467,7 +1467,7 @@ EXTERNAL SOURCES:
   RNCAsyncStorage:
     :path: "../node_modules/@react-native-async-storage/async-storage"
   RNCMaskedView:
-    :path: "../node_modules/@react-native-community/masked-view"
+    :path: "../node_modules/@react-native-masked-view/masked-view"
   RNDeviceInfo:
     :path: "../node_modules/react-native-device-info"
   RNFBAnalytics:
@@ -1574,7 +1574,7 @@ SPEC CHECKSUMS:
   ReactNativeLocalization: fb171138cdc80d5d0d4f20243d2fc82c2b3cc48f
   RevenueCat: e804675481436c1b0e83125ef4eda63969a86a14
   RNCAsyncStorage: 618d03a5f52fbccb3d7010076bc54712844c18ef
-  RNCMaskedView: 0e1bc4bfa8365eba5fbbb71e07fbdc0555249489
+  RNCMaskedView: 090213d32d8b3bb83a4dcb7d12c18f0152591906
   RNDeviceInfo: aad3c663b25752a52bf8fce93f2354001dd185aa
   RNFBAnalytics: 991772a4cd8c90de9a5eec33ef24dbba6e028c5b
   RNFBApp: a4f5b074984cf612e4c97d68b42be690c59e2638
@@ -1582,7 +1582,7 @@ SPEC CHECKSUMS:
   RNFBMessaging: 1e7415390ae579c5949505a0709686a2de8a47e5
   RNGestureHandler: 7feb85c5a30ebbcd4d5c7a851ba9e7eafb9860cb
   RNGoogleMobileAds: 83da44a316300650e1293be4fd3cf5fcbdcec1f6
-  RNPermissions: 31523c9980b2e02038e457b852d68bfa75755eae
+  RNPermissions: 86aac51dd58db51ecafc4765dfa8a6a19f64eccf
   RNPurchases: 7dffc0621cd72de61ecd053cc973fb6a3c3dad20
   RNReanimated: 9fc2b08ed365d7dc451bc451605d89c01f2c935b
   RNScreens: 2b73f5eb2ac5d94fbd61fa4be0bfebd345716825
