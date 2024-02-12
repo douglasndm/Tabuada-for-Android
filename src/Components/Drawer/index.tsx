@@ -33,6 +33,7 @@ const DrawerMenu: React.FC<DrawerContentOptions> = (
         navigation.navigate('About');
     }, [navigation]);
 
+    return <></>
     return (
         <Container>
             <DrawerContentScrollView {...props}>
