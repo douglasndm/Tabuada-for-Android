@@ -2,6 +2,8 @@ import React, { useCallback } from 'react';
 import { useWindowDimensions, Linking } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
+import Logo from '~/Assets/Images/2490315.svg';
+
 import {
 	Container,
 	MainMenuContainer,
@@ -13,8 +15,7 @@ import {
 	DrawerSection,
 } from './styles';
 
-const DrawerMenu: React.FC = (
-) => {
+const DrawerMenu: React.FC = () => {
 	const { navigate } = useNavigation();
 
 	const windowHeight = useWindowDimensions().height;
@@ -23,26 +24,24 @@ const DrawerMenu: React.FC = (
 		await Linking.openURL('https://douglasndm.dev');
 	}, []);
 
-    const navigateHome = useCallback(() => {
+	const navigateHome = useCallback(() => {
 		navigate('Home', {});
 	}, [navigate]);
 
 	const handleNavigateToSettings = useCallback(() => {
 		navigate('Settings');
-	}, []);
+	}, [navigate]);
 
 	const handleNavigateToAbout = useCallback(() => {
 		navigate('About');
-	}, []);
+	}, [navigate]);
 
 	return (
 		<Container>
 			<MainMenuContainer>
 				<LogoContainer>
 					{windowHeight > 600 ? (
-						<MenuItemText style={{ color: '#fff' }}>
-							Tabuada
-						</MenuItemText>
+						<Logo width={120} height={120} />
 					) : (
 						<MenuItemText style={{ color: '#fff' }}>
 							Tabuada
@@ -50,44 +49,37 @@ const DrawerMenu: React.FC = (
 					)}
 				</LogoContainer>
 
-                <DrawerSection>
+				<DrawerSection>
 					<MenuItemContainer onPress={navigateHome}>
 						<MenuContent>
 							<Icons name="home-outline" />
-							<MenuItemText>
-                            Início
-							</MenuItemText>
+							<MenuItemText>Início</MenuItemText>
 						</MenuContent>
 					</MenuItemContainer>
-                    </DrawerSection>
-
+				</DrawerSection>
 			</MainMenuContainer>
 
 			<DrawerSection>
-
-            <MenuItemContainer onPress={handleNavigateToSettings}>
+				<MenuItemContainer onPress={handleNavigateToSettings}>
 					<MenuContent>
 						<Icons name="settings-outline" />
-						<MenuItemText>
-                        Configurações
-						</MenuItemText>
+						<MenuItemText>Configurações</MenuItemText>
+					</MenuContent>
+				</MenuItemContainer>
+
+				<MenuItemContainer onPress={handleNavigateToSite}>
+					<MenuContent>
+						<Icons name="globe-outline" />
+						<MenuItemText>Mais aplicativos</MenuItemText>
 					</MenuContent>
 				</MenuItemContainer>
 
 				<MenuItemContainer onPress={handleNavigateToAbout}>
 					<MenuContent>
 						<Icons name="help-circle-outline" />
-						<MenuItemText>
-                        Sobre
-						</MenuItemText>
+						<MenuItemText>Sobre</MenuItemText>
 					</MenuContent>
 				</MenuItemContainer>
-
-				{/* <MenuItem
-					label="Mais aplicativos"
-					icon={() => <Icon name="globe-outline" />}
-					onPress={handleNavigateToSite}
-				/> */}
 			</DrawerSection>
 		</Container>
 	);

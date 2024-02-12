@@ -1,20 +1,12 @@
-import { Platform, Dimensions } from 'react-native';
+import { Dimensions } from 'react-native';
 import styled, { css } from 'styled-components/native';
 import { Drawer } from 'react-native-paper';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { isIphoneX } from 'react-native-iphone-x-helper';
 
-import LogoImg from '~/Assets/Images/2490315.svg';
-
-export const PageContainer = styled.SafeAreaView`
+export const Container = styled.View`
+	background-color: ${({ theme }) => theme.colors.background};
 	flex: 1;
-	background-color: ${({ theme }) => theme.colors.background};
-`;
-
-export const Container = styled.ScrollView.attrs(() => ({
-	contentContainerStyle: { flexGrow: 1 },
-}))`
-	background-color: ${({ theme }) => theme.colors.background};
 `;
 
 export const MainMenuContainer = styled.View`
@@ -27,30 +19,18 @@ export const LogoContainer = styled.SafeAreaView`
 	justify-content: center;
 	padding: 5px 0;
 	flex-direction: row;
+	padding-top: 75px;
 
 	${isIphoneX() &&
 	css`
 		padding-top: 80px;
 	`};
 
-	${Platform.OS === 'android' &&
-	css`
-		margin-top: -10px;
-	`}
-
 	${Dimensions.get('window').height <= 600 &&
 	css`
 		padding: 10px 0;
 		margin-top: 0;
 	`}
-`;
-
-export const Logo = styled.Image.attrs(() => ({
-	source: LogoImg,
-	resizeMode: 'cover',
-}))`
-	width: 120px;
-	height: 120px;
 `;
 
 export const MenuItemContainer = styled.TouchableOpacity`
