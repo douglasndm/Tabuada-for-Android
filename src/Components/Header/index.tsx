@@ -1,41 +1,106 @@
-import React, { useCallback } from 'react';
-import { PixelRatio } from 'react-native';
+import React, { useCallback, useState } from 'react';
+import { Platform, Pressable } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { Menu, MenuItemProps, AppbarActionProps } from 'react-native-paper';
 
-import { HeaderContainer, TextLogo, MenuIcon, MenuButton } from './styles';
+import { useDrawer } from '~/Contexts/Drawer';
 
-interface RequestProps {
-    title?: string;
+import {
+	AppBarHeader,
+	AppBarBackAction,
+	AppBarContent,
+	AppBarAction,
+} from './styles';
+
+const MORE_ICON = Platform.OS === 'ios' ? 'dots-horizontal' : 'dots-vertical';
+
+export interface RequestProps {
+	title?: string;
+	noDrawer?: boolean;
+	onBackPressed?: () => void;
+	onMenuPress?: () => void;
+	appBarActions?: AppbarActionProps[];
+	moreMenuItems?: MenuItemProps[];
+	disableBackButton?: boolean;
 }
 
-const Header: React.FC<RequestProps> = ({ title }: RequestProps) => {
-    const navigation = useNavigation();
+const Header: React.FC<RequestProps> = ({
+	title,
+	noDrawer,
+	onBackPressed,
+	onMenuPress,
+	appBarActions,
+	moreMenuItems,
+	disableBackButton,
+}: RequestProps) => {
+	const navigation = useNavigation();
 
-    const titleFontSize = PixelRatio.get() < 1.5 ? 19 : 26;
+	const { toggleDrawer } = useDrawer();
 
-    const handleOpenMenu = useCallback(() => {
-        navigation.toggleDrawer();
-    }, [navigation]);
+	const [showMenu, setShowMenu] = useState(false);
 
-    return (
-        <>
-            <HeaderContainer>
-                <MenuButton onPress={handleOpenMenu}>
-                    <MenuIcon />
-                </MenuButton>
+	const handleGoBack = useCallback(() => {
+		if (navigation.canGoBack()) {
+			navigation.goBack();
+		}
+	}, [navigation]);
 
-                {title ? (
-                    <TextLogo style={{ fontSize: titleFontSize }}>
-                        {title}
-                    </TextLogo>
-                ) : (
-                    <TextLogo style={{ fontSize: titleFontSize }}>
-                        Tabuada
-                    </TextLogo>
-                )}
-            </HeaderContainer>
-        </>
-    );
+	const switchShowMenu = useCallback(() => {
+		setShowMenu(prevValue => !prevValue);
+	}, []);
+
+	return (
+		<Pressable>
+			<AppBarHeader>
+				{!disableBackButton && (
+					<>
+						{noDrawer ? (
+							<AppBarBackAction
+								onPress={onBackPressed || handleGoBack}
+							/>
+						) : (
+							<AppBarAction
+								icon="menu"
+								onPress={onMenuPress || toggleDrawer}
+							/>
+						)}
+					</>
+				)}
+
+				<AppBarContent title={title || 'Tabuada'} color="white" />
+
+				{appBarActions &&
+					appBarActions.length > 0 &&
+					appBarActions.map(item => (
+						<AppBarAction key={item.icon} {...item} />
+					))}
+
+				{moreMenuItems && moreMenuItems.length > 0 && (
+					<Menu
+						visible={showMenu}
+						onDismiss={switchShowMenu}
+						anchor={
+							<AppBarAction
+								icon={MORE_ICON}
+								onPress={switchShowMenu}
+							/>
+						}
+					>
+						{moreMenuItems.map(item => (
+							<Menu.Item
+								{...item}
+								key={item.title}
+								onPress={e => {
+									switchShowMenu();
+									if (item.onPress) item.onPress(e);
+								}}
+							/>
+						))}
+					</Menu>
+				)}
+			</AppBarHeader>
+		</Pressable>
+	);
 };
 
 export default Header;

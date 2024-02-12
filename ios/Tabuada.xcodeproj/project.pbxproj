@@ -13,9 +13,9 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		4F12666126308BC2001E3792 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F12666026308BC2001E3792 /* StoreKit.framework */; };
 		4F20D85625B7BB43005560AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F20D85525B7BB43005560AE /* GoogleService-Info.plist */; };
+		56223B904E6962C301EDF4D5 /* Pods_Tabuada_TabuadaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9C3C45DC4AFE99817A93C7 /* Pods_Tabuada_TabuadaTests.framework */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		B6D7C173303E5CDE7F448B33 /* libPods-Tabuada-TabuadaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D34BB807446D617C36B38E67 /* libPods-Tabuada-TabuadaTests.a */; };
-		DA80E5EAAA0F9CEBC4D80B44 /* libPods-Tabuada.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC43487939428F0D29B326E8 /* libPods-Tabuada.a */; };
+		BE384A4541B66683C1F9AAA8 /* Pods_Tabuada.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3CB929C55088FD1AE2F2DC /* Pods_Tabuada.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +42,10 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Tabuada/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tabuada/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Tabuada/main.m; sourceTree = "<group>"; };
+		1D9C3C45DC4AFE99817A93C7 /* Pods_Tabuada_TabuadaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabuada_TabuadaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		275A5893036D5908B53410FF /* Pods-Tabuada-TabuadaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabuada-TabuadaTests.debug.xcconfig"; path = "Target Support Files/Pods-Tabuada-TabuadaTests/Pods-Tabuada-TabuadaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		325668AAB2BD3ED89DE422C9 /* Pods-Tabuada.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabuada.staging.xcconfig"; path = "Target Support Files/Pods-Tabuada/Pods-Tabuada.staging.xcconfig"; sourceTree = "<group>"; };
+		3B3CB929C55088FD1AE2F2DC /* Pods_Tabuada.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabuada.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F12666026308BC2001E3792 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		4F1CBFB026309EA800EDB480 /* Tabuada.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Tabuada.entitlements; path = Tabuada/Tabuada.entitlements; sourceTree = "<group>"; };
 		4F20D85525B7BB43005560AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -55,10 +57,8 @@
 		AE3EE3B816FE5321BAB19D0C /* Pods-Tabuada-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabuada-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Tabuada-tvOS/Pods-Tabuada-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		B31F48E8A4EC67C75171B3F7 /* libPods-Tabuada-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tabuada-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B89E3040B0E33E1C12045643 /* Pods-Tabuada-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabuada-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Tabuada-tvOSTests/Pods-Tabuada-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		BC43487939428F0D29B326E8 /* libPods-Tabuada.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tabuada.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C27A3A70A8213FDCF03131AF /* Pods-Tabuada-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabuada-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Tabuada-tvOS/Pods-Tabuada-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		C86E4027DA945A2122020CAA /* Pods-Tabuada.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabuada.debug.xcconfig"; path = "Target Support Files/Pods-Tabuada/Pods-Tabuada.debug.xcconfig"; sourceTree = "<group>"; };
-		D34BB807446D617C36B38E67 /* libPods-Tabuada-TabuadaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tabuada-TabuadaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -68,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6D7C173303E5CDE7F448B33 /* libPods-Tabuada-TabuadaTests.a in Frameworks */,
+				56223B904E6962C301EDF4D5 /* Pods_Tabuada_TabuadaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,8 +76,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA80E5EAAA0F9CEBC4D80B44 /* libPods-Tabuada.a in Frameworks */,
 				4F12666126308BC2001E3792 /* StoreKit.framework in Frameworks */,
+				BE384A4541B66683C1F9AAA8 /* Pods_Tabuada.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,10 +123,10 @@
 				4F12666026308BC2001E3792 /* StoreKit.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				BC43487939428F0D29B326E8 /* libPods-Tabuada.a */,
-				D34BB807446D617C36B38E67 /* libPods-Tabuada-TabuadaTests.a */,
 				B31F48E8A4EC67C75171B3F7 /* libPods-Tabuada-tvOS.a */,
 				04457DEDC413357C55FAEB56 /* libPods-Tabuada-tvOSTests.a */,
+				3B3CB929C55088FD1AE2F2DC /* Pods_Tabuada.framework */,
+				1D9C3C45DC4AFE99817A93C7 /* Pods_Tabuada_TabuadaTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -648,6 +648,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers/react/nativemodule/core",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon-Samples/ReactCommon_Samples.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon-Samples/ReactCommon_Samples.framework/Headers/platform/ios",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-Fabric/React_Fabric.framework/Headers/react/renderer/components/view/platform/cxx",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-NativeModulesApple/React_NativeModulesApple.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers/react/renderer/graphics/platform/ios",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
@@ -772,6 +783,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers/react/nativemodule/core",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon-Samples/ReactCommon_Samples.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon-Samples/ReactCommon_Samples.framework/Headers/platform/ios",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-Fabric/React_Fabric.framework/Headers/react/renderer/components/view/platform/cxx",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-NativeModulesApple/React_NativeModulesApple.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers/react/renderer/graphics/platform/ios",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
@@ -841,6 +863,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers/react/nativemodule/core",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon-Samples/ReactCommon_Samples.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon-Samples/ReactCommon_Samples.framework/Headers/platform/ios",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-Fabric/React_Fabric.framework/Headers/react/renderer/components/view/platform/cxx",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-NativeModulesApple/React_NativeModulesApple.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers/react/renderer/graphics/platform/ios",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
