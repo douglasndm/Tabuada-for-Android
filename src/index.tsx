@@ -6,50 +6,49 @@ import { NavigationContainer } from '@react-navigation/native';
 import { ThemeProvider } from 'styled-components/native';
 import './Services/Admob';
 
+import Routes from '~/routes';
 import PreferencesContext from './Contexts/PreferencesContext';
 
 import { getEnableRemoveAds } from './Functions/RemoveAds';
 
 import { GetTheme } from './Themes';
 
-import Drawer from '~/Routes/Drawer';
-
 const theme = GetTheme();
 
 const App: React.FC = () => {
-    const [preferences, setPreferences] = useState({
-        removeAds: false,
-    });
+	const [preferences, setPreferences] = useState({
+		removeAds: false,
+	});
 
-    useEffect(() => {
-        getEnableRemoveAds().then(response =>
-            setPreferences({ removeAds: response })
-        );
-    }, []);
+	useEffect(() => {
+		getEnableRemoveAds().then(response =>
+			setPreferences({ removeAds: response })
+		);
+	}, []);
 
-    return (
-        <PreferencesContext.Provider
-            value={{
-                userPreferences: preferences,
-                setUserPreferences: setPreferences,
-            }}
-        >
-            <ThemeProvider theme={theme}>
-                <NavigationContainer>
-                    <StatusBar
-                        backgroundColor="#00bfff"
-                        barStyle="light-content"
-                    />
-                    <Drawer />
-                </NavigationContainer>
-            </ThemeProvider>
-        </PreferencesContext.Provider>
-    );
+	return (
+		<PreferencesContext.Provider
+			value={{
+				userPreferences: preferences,
+				setUserPreferences: setPreferences,
+			}}
+		>
+			<ThemeProvider theme={theme}>
+				<NavigationContainer>
+					<StatusBar
+						backgroundColor="#00bfff"
+						barStyle="light-content"
+					/>
+					<Routes />
+				</NavigationContainer>
+			</ThemeProvider>
+		</PreferencesContext.Provider>
+	);
 };
 
 const codePushOptions: CodePushOptions = {
-    checkFrequency: CodePush.CheckFrequency.ON_APP_RESUME,
-    installMode: CodePush.InstallMode.ON_NEXT_RESUME,
+	checkFrequency: CodePush.CheckFrequency.ON_APP_RESUME,
+	installMode: CodePush.InstallMode.ON_NEXT_RESUME,
 };
 
 export default CodePush(codePushOptions)(App);

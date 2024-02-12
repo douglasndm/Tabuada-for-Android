@@ -1,45 +1,64 @@
-import React from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { StatusBar } from 'react-native';
-import { createNativeStackNavigator } from 'react-native-screens/native-stack';
+import { createStackNavigator } from '@react-navigation/stack';
+import { Drawer } from 'react-native-drawer-layout';
 
-import Home from './Views/Home';
-import Results from './Views/Results';
+import DrawerMenu from '~/Components/Drawer';
 
-const StackNavigator = createNativeStackNavigator();
+import Home from '~/Views/Home';
+import Results from '~/Views/Results';
+import Settings from '~/Views/Settings';
+import About from '~/Views/About';
 
-const Routes: React.FC = () => (
-    <>
-        <StatusBar backgroundColor="#00bfff" translucent />
+import TrackingPermission from '~/Views/Permissions/AppleATT';
+import DrawerContext from '~/Contexts/Drawer';
 
-        <StackNavigator.Navigator
-            screenOptions={{
-                headerStyle: {
-                    backgroundColor: '#00bfff',
-                },
-                headerTintColor: '#fff',
-                headerTitleStyle: {
-                    fontWeight: 'bold',
-                    textAlign: 'center',
-                    fontSize: 24,
-                },
-            }}
-        >
-            <StackNavigator.Screen
-                name="home"
-                component={Home}
-                options={{ title: 'Tabuada' }}
-            />
+const Stack = createStackNavigator();
 
-            <StackNavigator.Screen
-                name="results"
-                component={Results}
-                options={{
-                    title: 'Resultados',
-                    headerTitleStyle: { textAlign: 'left' },
-                }}
-            />
-        </StackNavigator.Navigator>
-    </>
-);
+const Routes: React.FC = () => {
+	const [draweOpen, setDrawerOpen] = useState(false);
+
+	const handleRouteChange = useCallback(_ => {
+		setDrawerOpen(false);
+	}, []);
+
+	const toggleDrawer = useCallback(() => {
+		setDrawerOpen(prevState => !prevState);
+	}, []);
+
+	const contextValue = useMemo(
+		() => ({ setDrawerOpen, toggleDrawer }),
+		[setDrawerOpen, toggleDrawer]
+	);
+
+	return (
+		<Drawer
+			open={draweOpen}
+			onOpen={() => setDrawerOpen(true)}
+			onClose={() => setDrawerOpen(false)}
+			renderDrawerContent={() => <DrawerMenu />}
+		>
+			<DrawerContext.Provider value={contextValue}>
+				<StatusBar backgroundColor="#00bfff" translucent />
+
+				<Stack.Navigator
+					screenOptions={{
+						headerShown: false,
+					}}
+					screenListeners={{ state: handleRouteChange }}
+				>
+					<Stack.Screen name="Home" component={Home} />
+					<Stack.Screen name="Results" component={Results} />
+					<Stack.Screen name="Settings" component={Settings} />
+					<Stack.Screen name="About" component={About} />
+					<Stack.Screen
+						name="TrackingPermission"
+						component={TrackingPermission}
+					/>
+				</Stack.Navigator>
+			</DrawerContext.Provider>
+		</Drawer>
+	);
+};
 
 export default Routes;

@@ -1,74 +1,96 @@
 import React, { useCallback } from 'react';
-import { Linking } from 'react-native';
-import {
-    DrawerContentOptions,
-    DrawerContentScrollView,
-} from '@react-navigation/drawer';
+import { useWindowDimensions, Linking } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import {
-    Container,
-    Content,
-    DrawerSection,
-    MenuItem,
-    Icon,
-    LogoContainer,
-    Logo,
-    LogoText,
+	Container,
+	MainMenuContainer,
+	LogoContainer,
+	MenuItemContainer,
+	MenuContent,
+	MenuItemText,
+	Icons,
+	DrawerSection,
 } from './styles';
 
-const DrawerMenu: React.FC<DrawerContentOptions> = (
-    props: DrawerContentOptions
+const DrawerMenu: React.FC = (
 ) => {
-    const { navigation } = props;
+	const { navigate } = useNavigation();
 
-    const handleNavigateToSite = useCallback(async () => {
-        await Linking.openURL('https://douglasndm.dev');
-    }, []);
+	const windowHeight = useWindowDimensions().height;
 
-    const handleNavigateToSettings = useCallback(() => {
-        navigation.navigate('Settings');
-    }, [navigation]);
+	const handleNavigateToSite = useCallback(async () => {
+		await Linking.openURL('https://douglasndm.dev');
+	}, []);
 
-    const handleNavigateToAbout = useCallback(() => {
-        navigation.navigate('About');
-    }, [navigation]);
+    const navigateHome = useCallback(() => {
+		navigate('Home', {});
+	}, [navigate]);
 
-    return <></>
-    return (
-        <Container>
-            <DrawerContentScrollView {...props}>
-                <LogoContainer>
-                    <Logo />
-                    <LogoText>Tabuada</LogoText>
-                </LogoContainer>
+	const handleNavigateToSettings = useCallback(() => {
+		navigate('Settings');
+	}, []);
+
+	const handleNavigateToAbout = useCallback(() => {
+		navigate('About');
+	}, []);
+
+	return (
+		<Container>
+			<MainMenuContainer>
+				<LogoContainer>
+					{windowHeight > 600 ? (
+						<MenuItemText style={{ color: '#fff' }}>
+							Tabuada
+						</MenuItemText>
+					) : (
+						<MenuItemText style={{ color: '#fff' }}>
+							Tabuada
+						</MenuItemText>
+					)}
+				</LogoContainer>
 
                 <DrawerSection>
-                    <MenuItem
-                        icon={() => <Icon name="home" />}
-                        label="Início"
-                    />
-                </DrawerSection>
-            </DrawerContentScrollView>
+					<MenuItemContainer onPress={navigateHome}>
+						<MenuContent>
+							<Icons name="home-outline" />
+							<MenuItemText>
+                            Início
+							</MenuItemText>
+						</MenuContent>
+					</MenuItemContainer>
+                    </DrawerSection>
 
-            <DrawerSection>
-                <MenuItem
-                    label="Configurações"
-                    icon={() => <Icon name="settings-outline" />}
-                    onPress={handleNavigateToSettings}
-                />
-                <MenuItem
-                    label="Mais aplicativos"
-                    icon={() => <Icon name="globe-outline" />}
-                    onPress={handleNavigateToSite}
-                />
-                <MenuItem
-                    label="Sobre"
-                    icon={() => <Icon name="help-circle-outline" />}
-                    onPress={handleNavigateToAbout}
-                />
-            </DrawerSection>
-        </Container>
-    );
+			</MainMenuContainer>
+
+			<DrawerSection>
+
+            <MenuItemContainer onPress={handleNavigateToSettings}>
+					<MenuContent>
+						<Icons name="settings-outline" />
+						<MenuItemText>
+                        Configurações
+						</MenuItemText>
+					</MenuContent>
+				</MenuItemContainer>
+
+				<MenuItemContainer onPress={handleNavigateToAbout}>
+					<MenuContent>
+						<Icons name="help-circle-outline" />
+						<MenuItemText>
+                        Sobre
+						</MenuItemText>
+					</MenuContent>
+				</MenuItemContainer>
+
+				{/* <MenuItem
+					label="Mais aplicativos"
+					icon={() => <Icon name="globe-outline" />}
+					onPress={handleNavigateToSite}
+				/> */}
+			</DrawerSection>
+		</Container>
+	);
 };
 
 export default DrawerMenu;
