@@ -55,15 +55,14 @@ const Home: React.FC = () => {
 	const [numTimesError, setNumTimesError] = useState<string>('');
 
 	const adUnit = useMemo(() => {
-		if (__DEV__) {
-			return TestIds.BANNER;
-		}
-
 		if (Platform.OS === 'ios') {
 			return EnvConfig.IOS_ADMOB_ADUNIT_HOMEBANNER;
 		}
+		if (Platform.OS === 'android') {
+			return EnvConfig.ANDROID_ADMOB_ADUNIT_HOMEBANNER;
+		}
 
-		return EnvConfig.ANDROID_ADMOB_ADUNIT_HOMEBANNER;
+		return TestIds.BANNER;
 	}, []);
 
 	const handleCalc = useCallback(() => {

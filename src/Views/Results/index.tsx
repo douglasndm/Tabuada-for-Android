@@ -1,4 +1,4 @@
-import React, { useMemo, useContext } from 'react';
+import React, { useMemo, useContext, useCallback } from 'react';
 import { Dimensions, Platform } from 'react-native';
 import { useRoute } from '@react-navigation/native';
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
@@ -37,15 +37,13 @@ const Results: React.FC = () => {
 	const [displayAd, setDisplayAd] = React.useState(true);
 
 	const adUnit = useMemo(() => {
-		if (__DEV__) {
-			return TestIds.BANNER;
-		}
-
 		if (Platform.OS === 'ios') {
 			return EnvConfig.IOS_ADMOB_ADUNIT_RESULTSBANNER;
 		}
-
-		return EnvConfig.ANDROID_ADMOB_ADUNIT_RESULTSBANNER;
+		if (Platform.OS === 'android') {
+			return EnvConfig.ANDROID_ADMOB_ADUNIT_RESULTSBANNER;
+		}
+		return TestIds.BANNER;
 	}, []);
 
 	const { params } = useRoute();
@@ -82,9 +80,9 @@ const Results: React.FC = () => {
 
 	const initialLayout = { width: Dimensions.get('window').width };
 
-	function handleAdFailedToLoad() {
+	const handleAdFailedToLoad = useCallback((_: Error) => {
 		setDisplayAd(false);
-	}
+	}, []);
 
 	return (
 		<Container>
