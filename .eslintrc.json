@@ -1,6 +1,7 @@
 {
     "env": {
-        "es2020": true
+        "es2020": true,
+        "jest": true
     },
     "globals": {
         "__DEV__": "readonly"
@@ -28,8 +29,17 @@
         "react-hooks"
     ],
     "rules": {
+        "react/jsx-props-no-spreading": "off",
+        "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+        "no-continue": "off",
+        "no-undef": "off",
+        "react/function-component-definition": "off",
+        "react/jsx-no-useless-fragment": "off",
+        "import/no-unresolved": "off",
+        "no-restricted-syntax":"off",
+        "no-plusplus": "off",
+        "no-extra-boolean-cast": 0,
         "react/require-default-props": "off",
-        "react/jsx-indent" : ["error", 4],
         "prettier/prettier": "error",
         "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
         "react/jsx-one-expression-per-line": "off",
@@ -39,7 +49,7 @@
         "no-underscore-dangle": "off",
         "camelcase": "off",
         "jsx-a11y/anchor-is-valid": "off",
-        "no-console": ["error", { "allow": ["tron"] }],
+        "no-console": "off",
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
         "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
@@ -48,13 +58,10 @@
             "error",
             "ignorePackages",
             {
-              "ts": "never",
-              "tsx": "never"
+                "ts": "never",
+                "tsx": "never"
             }
-          ],
-          // note you must disable the base rule as it can report incorrect errors
-        "no-use-before-define": "off",
-        "@typescript-eslint/no-use-before-define": ["error"]
+        ]
     },
     "settings": {
         "import/resolver": {
