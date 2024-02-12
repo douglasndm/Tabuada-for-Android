@@ -1,4 +1,11 @@
 {
   "name": "rntabuada",
-  "displayName": "rntabuada"
+  "displayName": "rntabuada",
+
+  "react-native-google-mobile-ads": {
+    "android_app_id": "",
+    "ios_app_id": "",
+    "user_tracking_usage_description": "This identifier will be used to deliver personalized ads to you.",
+    "delay_app_measurement_init": true
+  }
 }

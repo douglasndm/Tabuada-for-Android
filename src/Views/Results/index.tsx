@@ -2,7 +2,7 @@ import React, { useMemo, useContext } from 'react';
 import { Dimensions, Platform } from 'react-native';
 import { useRoute, useNavigation } from '@react-navigation/native';
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
-import { BannerAd, BannerAdSize, TestIds } from '@react-native-firebase/admob';
+import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
 import EnvConfig from 'react-native-config';
 
 import PreferencesContext from '~/Contexts/PreferencesContext';

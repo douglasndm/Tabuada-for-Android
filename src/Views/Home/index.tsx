@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import { Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { BannerAd, BannerAdSize, TestIds } from '@react-native-firebase/admob';
+import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
 import EnvConfig from 'react-native-config';
 
 import PreferencesContext from '~/Contexts/PreferencesContext';

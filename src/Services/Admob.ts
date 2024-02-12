@@ -1,4 +1,4 @@
-import admob, { MaxAdContentRating } from '@react-native-firebase/admob';
+import admob, { MaxAdContentRating } from 'react-native-google-mobile-ads';
 
 // Seta as configurações defaults para todos os ads no app
 admob().setRequestConfiguration({
